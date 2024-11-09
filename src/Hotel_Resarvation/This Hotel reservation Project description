@@ -1,0 +1,48 @@
+/*****
+
+This Project we made for doing practice of Java DataBase Connectivity using MYSQL ,
+HOTEL RESERVATION SYSTEM : There is five operation we performed in this particular project that we are mention below 
+1.  Reservation Room       (for achieve this we have writing a method which help to reserve room by taking some information like reserveId , name ,room_number , contact date and time !)
+2.  Review the Reservation (how many room or how many guest using hotel for specific range of time . so basically Retrieving data from database )
+3.  Get Room Number        (here we want to know the room number of any guest , they are using for living ) 
+4.  Update Reservation     (here we want to Update the database ob leaving the guest and on comeing new guest )
+5.  Deleting the reservation  ( here we want to delete the data from the table or database ) 
+6.  Exiting the System at last after using .
+
+So my Database table structure/schema design as hotel_reservation in my System , in this one table made that is Reservation name .
+there is field of database containing the ,
+1st reservation ID for uniquely identify any room or guest on allocating the room it is autoincrement , 2nd is Guest name varchar not null 3rd is room number not null integer type
+4th is Contact number it is also varchar and not null , 5th is Date and time whenever room allocated that time and date specified so it is Timestamp  .
+Database schema designed as like this , 
+CREATE TABLE Reservation(
+    res_ID INT PRIMARY KEY AUTO_INCREMENT,
+    guest_name VARCHAR(255) NOT NULL,
+    room_number INT NOT NULL,
+    contact VARCHAR(255) NOT NULL,
+    res_DATE TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
+    );
+
+here  our database designed , Now move on the COnnection Establising between database and java 
+******/
+/******
+we are loading the JDBC Drivers by using them we can connect java with the database , here getting the DriverManager 
+by providing it's getconnection has  method url , username and password so that we can establish the Connection !
+after that we wrote the switch statement for calling the that 6 function 
+ in while loop for perform operations using java database connectivity .
+ and also we used exception Hendling in this project using try and catch also throws . we are handling exception every time in this particular project .
+ we used for CRUD Operation , in database table at inserting time we are Iserting the data for reserving room this is done in reserveRoom () method 
+ here we create a statement and using this statement we are able to execute the SQL Inserting Query in table , using executeUpdate method in connection .
+ we are reading or taking data from user aso use Scanner class . 
+ for Better secure storing data in database we are using in JDBC preparedStatement so we can avoid the SQL injection .
+
+ and then we are reviewing the data  from database using viewReservation() method ,for getting or read retrieving data
+ getRoomNumber() Method for the getting Room number of any particular Guest using Primary key Res_ID and guest_name .
+ for doing Updating Database when any guest leaving and coming new guest so we can allocate them easly , that thing achieve by updateReservation , 
+ before updating we need to check for the existing Primary key , or which res_id has not any guest detail and any guest gone and other come , 
+ before allocating them we need to check if any room available or not so checking this we wrote aa function that is existReservation is it exist then we can update it 
+ for new guest .
+
+ when we need to delete the entry or row of database we can use parmanentaly delete using DeleteReservation() Method  .
+
+ at the end of the system we are going exit so after perform task system will shutdown .
+*******/
