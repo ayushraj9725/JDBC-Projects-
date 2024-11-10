@@ -13,6 +13,7 @@ public class DataUpdatingJDBC {
         }
 
         // establishing the connection for updating data from database using jdbc
+
         String url = "jdbc:mysql://localhost:3306/Company";
         String username = "root" ;
         String password = "@Ayush1225" ;
