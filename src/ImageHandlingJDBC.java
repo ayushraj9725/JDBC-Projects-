@@ -8,14 +8,14 @@ import java.sql.SQLException;
 
 public class ImageHandlingJDBC {
     public static void main(String[] args) throws  ClassNotFoundException{
-
+  // something occur in this code while inserting the images into database , we will write in imageInsert file
         String url = "jdbc:mysql://localhost:3306/Company";
         String username = "root" ;
         String password = "@Ayush1225";
         String img_path1 = "C:\\Users\\ayush\\Downloads\\profileleet.jpg";
-        String img_path = "C:\\Users\\ayush\\Downloads\\world.jpeg" ;
+        String img_path = "C:\\Users\\ayush\\Downloads\\world.jpg" ;
 
-        String query = "INSERT INTO img_table(img_data) VALUES(?)" ;
+        String query = "INSERT INTO image(img_data) VALUES(?)" ;
 
         // loading the drivers here
         try {

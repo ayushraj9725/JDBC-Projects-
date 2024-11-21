@@ -21,7 +21,7 @@ public class HotelResarvation {
                 System.out.println();
                 System.out.println("HOTEL MANAGEMENT SYSTEM ");
                 System.out.println("1 : Reserve The Room ");
-                System.out.println("2 : View Reservation ") ;
+                System.out.println("2 : View Reservation ");
                 System.out.println("3 : Get Room Number ");
                 System.out.println("4 : Update Reservation");
                 System.out.println("5 : Delete Reservation");
